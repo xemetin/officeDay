@@ -1,0 +1,191 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="FillForm" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Anket" Type="InArgument(sd:DataTable)" />
+    <x:Property Name="in_CustomerEmail" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>813,1910</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>FillForm_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Globalization</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="FillForm" sap:VirtualizedContainerService.HintSize="655,1845" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge: Müşteri Memnuniyet Anketi (Preview)" sap:VirtualizedContainerService.HintSize="593,1734" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="d01a2083-cc77-47b2-8755-f87fd2ae8c24" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="559,1517" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Double" DisplayName="Type Into 'İsim Soyisim'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="497,218" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="d01a2083-cc77-47b2-8755-f87fd2ae8c24" Text="[in_Anket.Rows(0).Item(1).ToString]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://forms.office.com/Pages/DesignPageV2.aspx?origin=shell&amp;subpage=design&amp;id=Gd7ERvwPVEyqhu5ydK-p16Hrj1OGf5RDv_banMKbKitUOUFQSzJCRDJCUUo5VzlUR0ZJU0FBQUNHWi4u&amp;topview=Preview" CVScreenId="fe5ad6a1-29dc-4743-889c-1aa62da1bf72" CvElementArea="557, 667, 843, 44" CvType="InputBox" DesignTimeRectangle="562, 452, 838, 39" DesignTimeScaleFactor="1.147499918937683" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='' class='-mS-627' aaname='' /&gt;" Guid="8de296bf-c855-4255-83cd-3653e60bdf55" InformativeScreenshot="4ab893e3ab6f9a572a2eed2ef2fbf91d.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Müşteri Memnuniyet Anketi (Preview)' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" WaitForReadyArgument="Complete">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target CVScreenId="fe5ad6a1-29dc-4743-889c-1aa62da1bf72" CvTextArea="559, 624, 107, 24" CvTextArgument="isim Soyisim" CvType="Text" DesignTimeRectangle="560, 403, 106, 26" ElementType="Text" FriendlyName="'İsim Soyisim'" FullSelectorArgument="&lt;webctrl aaname='İsim Soyisim' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='İsim Soyisim' tag='SPAN' type='' class='text-format-content ' check:innerText='İsim Soyisim' /&gt;" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="497,218" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="d01a2083-cc77-47b2-8755-f87fd2ae8c24" Text="[in_CustomerEmail]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://forms.office.com/Pages/DesignPageV2.aspx?origin=shell&amp;subpage=design&amp;id=Gd7ERvwPVEyqhu5ydK-p16Hrj1OGf5RDv_banMKbKitUOUFQSzJCRDJCUUo5VzlUR0ZJU0FBQUNHWi4u&amp;topview=Preview" CVScreenId="67b1a3a0-db93-457c-b6c1-02308ad3234f" CvElementArea="557, 616, 843, 45" CvType="InputBox" DesignTimeRectangle="562, 602, 838, 39" DesignTimeScaleFactor="1.147499918937683" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl aria-labelledby='QuestionId_re98f5409fcda4511bfe179cf183cb207 QuestionInfo_re98f5*' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-labelledby='QuestionId_re98f5409fcda4511bfe179cf183cb207 QuestionInfo_re98f5*' tag='INPUT' type='' class='-mS-627' aaname='' /&gt;" Guid="c6e379fa-04cb-4abf-b012-f81233f5299e" InformativeScreenshot="4da7d443cc2009df9f04484aa24362cd.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Müşteri Memnuniyet Anketi (Preview)' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Double" DisplayName="Type Into 'INPUT DatePicker18-label'" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="497,218" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="d01a2083-cc77-47b2-8755-f87fd2ae8c24" Text="[Datetime.Parse(in_Anket.Rows(1).Item(1).ToString, Globalization.CultureInfo.CurrentCulture).ToString(&quot;MM/dd/yyyy&quot;)]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://forms.office.com/Pages/DesignPageV2.aspx?origin=shell&amp;subpage=design&amp;id=Gd7ERvwPVEyqhu5ydK-p16Hrj1OGf5RDv_banMKbKitUOUFQSzJCRDJCUUo5VzlUR0ZJU0FBQUNHWi4u&amp;topview=Preview" CVScreenId="d5b1da5e-b030-457c-af58-e72da698a334" CvTextArea="575, 830, 232, 21" CvTextArgument="Please input date (M/d/yyyy)" CvType="Text" DesignTimeRectangle="562, 820, 838, 39" DesignTimeScaleFactor="1.147499918937683" ElementType="InputBox" FriendlyName="'INPUT DatePicker18-label'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' class='ms-TextField-field field-722' aaname='' /&gt;" Guid="e2045e0f-ca73-4078-b0ec-5c036cc87f74" InformativeScreenshot="674786525f9ed355b49c77ff39ec0271.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Müşteri Memnuniyet Anketi (Preview)' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <Switch x:TypeArguments="x:Int32" DisplayName="Switch" Expression="[CInt(in_Anket.Rows(2).Item(1))]" sap:VirtualizedContainerService.HintSize="497,431" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+              <uix:NClick x:Key="1" ActivateBefore="True" ClickType="Single" DisplayName="Click '1'" sap:VirtualizedContainerService.HintSize="334,157" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d01a2083-cc77-47b2-8755-f87fd2ae8c24" Version="V3">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="https://forms.office.com/Pages/ResponsePage.aspx?id=Gd7ERvwPVEyqhu5ydK-p16Hrj1OGf5RDv_banMKbKitUOUFQSzJCRDJCUUo5VzlUR0ZJU0FBQUNHWi4u" CVScreenId="72aa348d-97c7-4d51-9ee6-016c38c4c598" CvTextArea="597, 604, 7, 15" CvTextArgument="1" CvType="Text" DesignTimeRectangle="598, 597, 9, 28" DesignTimeScaleFactor="1.147499918937683" ElementType="Text" FriendlyName="'1'" FullSelectorArgument="&lt;webctrl id='QuestionChoiceOption1' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl id='QuestionChoiceOption1' tag='SPAN' type='' class='text-format-content css-93' aaname='1' check:innerText='1' /&gt;" Guid="d85394f1-affb-4744-a18b-613f21d9a54c" InformativeScreenshot="b9376ac35c7de4e075ccc06ecf651a9b.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Müşteri Memnuniyet Anketi' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+                </uix:NClick.Target>
+              </uix:NClick>
+              <uix:NClick x:Key="2" ActivateBefore="True" ClickType="Single" DisplayName="Click '2'" sap:VirtualizedContainerService.HintSize="334,157" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d01a2083-cc77-47b2-8755-f87fd2ae8c24" Version="V3">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="https://forms.office.com/Pages/ResponsePage.aspx?id=Gd7ERvwPVEyqhu5ydK-p16Hrj1OGf5RDv_banMKbKitUOUFQSzJCRDJCUUo5VzlUR0ZJU0FBQUNHWi4u" CVScreenId="d542e7c1-7b16-44d5-af6e-e8becae76c9d" CvTextArea="596, 696, 11, 15" CvTextArgument="2" CvType="Text" DesignTimeRectangle="598, 689, 9, 28" DesignTimeScaleFactor="1.147499918937683" ElementType="Text" FriendlyName="'2'" FullSelectorArgument="&lt;webctrl id='QuestionChoiceOption7' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl id='QuestionChoiceOption7' tag='SPAN' type='' class='text-format-content css-93' aaname='2' check:innerText='2' /&gt;" Guid="82275fa8-9f11-49fb-a24d-8ee0ea3a249d" InformativeScreenshot="0642ddee77ca262f3811158a14b21647.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Müşteri Memnuniyet Anketi' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+                </uix:NClick.Target>
+              </uix:NClick>
+              <uix:NClick x:Key="3" ActivateBefore="True" ClickType="Single" DisplayName="Click '3'" sap:VirtualizedContainerService.HintSize="334,157" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d01a2083-cc77-47b2-8755-f87fd2ae8c24" Version="V3">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="https://forms.office.com/Pages/ResponsePage.aspx?id=Gd7ERvwPVEyqhu5ydK-p16Hrj1OGf5RDv_banMKbKitUOUFQSzJCRDJCUUo5VzlUR0ZJU0FBQUNHWi4u" CVScreenId="e8972bfa-d05f-46bd-a918-889a243a1f21" CvTextArea="596, 695, 10, 15" CvTextArgument="3" CvType="Text" DesignTimeRectangle="598, 688, 9, 28" DesignTimeScaleFactor="1.147499918937683" ElementType="Text" FriendlyName="'3'" FullSelectorArgument="&lt;webctrl id='QuestionChoiceOption13' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl id='QuestionChoiceOption13' tag='SPAN' type='' class='text-format-content css-93' aaname='3' check:innerText='3' /&gt;" Guid="8c308c06-84e8-417a-946b-a3f494881c4d" InformativeScreenshot="df44a08ae1504a4e741b211d67e0f5b7.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Müşteri Memnuniyet Anketi' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+                </uix:NClick.Target>
+              </uix:NClick>
+              <uix:NClick x:Key="4" ActivateBefore="True" ClickType="Single" DisplayName="Click '4'" sap:VirtualizedContainerService.HintSize="334,157" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d01a2083-cc77-47b2-8755-f87fd2ae8c24" Version="V3">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="https://forms.office.com/Pages/ResponsePage.aspx?id=Gd7ERvwPVEyqhu5ydK-p16Hrj1OGf5RDv_banMKbKitUOUFQSzJCRDJCUUo5VzlUR0ZJU0FBQUNHWi4u" CVScreenId="a33fa862-2940-4fd5-a605-5de3a41704c5" CvTextArea="595, 696, 12, 15" CvTextArgument="4" CvType="Text" DesignTimeRectangle="598, 689, 9, 28" DesignTimeScaleFactor="1.147499918937683" ElementType="Text" FriendlyName="'4'" FullSelectorArgument="&lt;webctrl id='QuestionChoiceOption19' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl id='QuestionChoiceOption19' tag='SPAN' type='' class='text-format-content css-93' aaname='4' check:innerText='4' /&gt;" Guid="9f447537-49bc-4d6a-8322-e09417ded38b" InformativeScreenshot="379a4f40df0b046d75ecfe88763593b1.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Müşteri Memnuniyet Anketi' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+                </uix:NClick.Target>
+              </uix:NClick>
+              <uix:NClick x:Key="5" ActivateBefore="True" ClickType="Single" DisplayName="Click '5'" sap:VirtualizedContainerService.HintSize="334,157" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d01a2083-cc77-47b2-8755-f87fd2ae8c24" Version="V3">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="https://forms.office.com/Pages/ResponsePage.aspx?id=Gd7ERvwPVEyqhu5ydK-p16Hrj1OGf5RDv_banMKbKitUOUFQSzJCRDJCUUo5VzlUR0ZJU0FBQUNHWi4u" CVScreenId="a232fa4e-09a0-472b-be56-c650c8cdd79c" CvTextArea="596, 696, 10, 15" CvTextArgument="5" CvType="Text" DesignTimeRectangle="598, 689, 9, 28" DesignTimeScaleFactor="1.147499918937683" ElementType="Text" FriendlyName="'5'" FullSelectorArgument="&lt;webctrl id='QuestionChoiceOption25' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl id='QuestionChoiceOption25' tag='SPAN' type='' class='text-format-content css-93' aaname='5' check:innerText='5' /&gt;" Guid="210e8cd2-65cf-4e07-9f01-8518cc8e5462" InformativeScreenshot="bc743901f508cf53dfde132a41d67004.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Müşteri Memnuniyet Anketi' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+                </uix:NClick.Target>
+              </uix:NClick>
+            </Switch>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Submit'" sap:VirtualizedContainerService.HintSize="497,157" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d01a2083-cc77-47b2-8755-f87fd2ae8c24" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://forms.office.com/Pages/ResponsePage.aspx?id=Gd7ERvwPVEyqhu5ydK-p16Hrj1OGf5RDv_banMKbKitUOUFQSzJCRDJCUUo5VzlUR0ZJU0FBQUNHWi4u" CVScreenId="7f2cf2a3-5f0b-4885-bdd8-81b6516506ad" CvElementArea="536, 727, 104, 51" CvTextArea="560, 744, 56, 16" CvTextArgument="Submit" CvType="Button" DesignTimeRectangle="539, 729, 100, 46" DesignTimeScaleFactor="1.147499918937683" ElementType="Button" FriendlyName="'Submit'" FullSelectorArgument="&lt;webctrl class='css-231' parentid='form-main-content1' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl class='css-231' parentid='form-main-content1' tag='BUTTON' type='' aaname='Submit' check:innerText='Submit' /&gt;" Guid="22fc4f80-2767-4df6-8e64-8f9f0d6b9b75" InformativeScreenshot="3d5619114f4bac037c7404a8a9e13dac.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Müşteri Memnuniyet Anketi' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADjSURBVDhPY4AB82MXBID4PRD/JwG/h2qHG4BN0X/Tw2f/Ky5b+19q9kIwBrFBYiA5qHYIQNcIwyAN/C2d/5lzCsAYxAaJgeQYmJvb3wPxf3yYpRWhGYZBLjE+eApsAFZN6JjR0gbDAJgL4IoOPHj4Hxk4LVoKl2N3coFrRvcCigGNBw/D+chYMDgMeyAiKwIZADME3SDp5AywBnSMYcCDDx/gBiHLMZpZoIQBDBPtBYoN4PUNgIcBCGM1AB/GZwDBhMRc14TbAGQA8icuLFJSSdgAmCApGKoVAoAC79EV4McF7wGS5hcjN4jnVwAAAABJRU5ErkJggg==" InformativeScreenshot="182f92590c7c8d182c6864537622ef23.jpg" Selector="&lt;html app='msedge.exe' title='Müşteri Memnuniyet Anketi (Preview)' /&gt;" Title="Müşteri Memnuniyet Anketi (Preview)" Url="https://forms.office.com/Pages/DesignPageV2.aspx?origin=shell&amp;subpage=design&amp;id=Gd7ERvwPVEyqhu5ydK-p16Hrj1OGf5RDv_banMKbKitUOUFQSzJCRDJCUUo5VzlUR0ZJU0FBQUNHWi4u&amp;topview=Preview" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
